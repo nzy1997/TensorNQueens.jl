@@ -1,0 +1,13 @@
+name = "TensorNQueens"
+uuid = "c874077a-80f0-4a56-a204-641682077e9e"
+authors = ["nzy1997"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
