@@ -41,10 +41,8 @@ end
 end
 
 @testset "generate_tensor_network" begin
-    for n in 1:10
-        code, tensors = generate_tensor_network(n, Int)
-        optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
-        @show contraction_complexity(optcode, uniformsize(optcode, 2))
-        @show optcode(tensors...)[]
-    end
+    n = 7
+    code, tensors = generate_tensor_network(n, Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    @test optcode(tensors...)[] == 40
 end
