@@ -2,5 +2,5 @@ using TensorNQueens
 using Test
 
 @testset "TensorNQueens.jl" begin
-    # Write your tests here.
+    include("tensors.jl")
 end

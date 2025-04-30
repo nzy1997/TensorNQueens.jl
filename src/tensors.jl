@@ -31,7 +31,11 @@ function generate_tensor(T)
             res[index...] = zero(T)
         end
     end
-    return res,[one(T),zero(T)],[zero(T),one(T)] ,[one(T),one(T)]
+    return res
+end
+
+function generate01tensors(T)
+    return[one(T),zero(T)],[zero(T),one(T)] ,[one(T),one(T)]
 end
 
 struct TensorNQ
@@ -53,6 +57,13 @@ end
 # 2 6 7
 function get_pos()
     return [(0,-1), (1,-1), (-1,-1), (-1,0),(0,0), (1,0), (1,1),(-1,1),(0,1)]
+end
+
+struct TensorNQ_lattice
+    lattice::Matrix{TensorNQ}
+    pos10::Vector{Int}
+    pos01::Vector{Int}
+    pos11::Vector{Int}
 end
 
 function generate_TensorNQ_lattice(n::Int)
@@ -91,12 +102,14 @@ function generate_TensorNQ_lattice(n::Int)
             res[i,j] = TensorNQ(index_vec)
         end
     end
-    return res, pos10,pos01,pos11 ∪ [res[i,j].labels[5] for i in 1:n, j in 1:n]
+    return TensorNQ_lattice(res, pos10,pos01,pos11 ∪ [res[i,j].labels[5] for i in 1:n, j in 1:n])
 end
 
 function generate_tensor_network(n::Int,T)
-    lattice,pos10,pos01,pos11 = generate_TensorNQ_lattice(n)
+    t9_lattice = generate_TensorNQ_lattice(n)
+    lattice,pos10,pos01,pos11 = t9_lattice.lattice,t9_lattice.pos10,t9_lattice.pos01,t9_lattice.pos11
     t9_ixs = getfield.(vec(lattice),:labels)
-    t,t10,t01,t11 = generate_tensor(T)
+    t = generate_tensor(T)
+    t10,t01,t11 = generate01tensors(T)
     return DynamicEinCode(t9_ixs ∪ [[p] for p in pos10] ∪ [[p] for p in pos01] ∪  [[p] for p in pos11],Int[]),[fill(t,length(t9_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
 end

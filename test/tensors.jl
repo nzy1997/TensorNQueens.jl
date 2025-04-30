@@ -1,6 +1,6 @@
 using Test
 using TensorNQueens
-using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice
+using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network
 using OMEinsum
 
 @testset "generate_tensor" begin
@@ -45,4 +45,41 @@ end
     code, tensors = generate_tensor_network(n, Int)
     optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
     @test optcode(tensors...)[] == 40
+end
+
+@testset "generate_8_tensor_network" begin
+    n = 7
+    code, tensors = generate_8_tensor_network(n, Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    @test optcode(tensors...)[] == 40
+end
+
+@testset "generate_3_tensor" begin
+    t = TensorNQueens.generate_3_tensor(Int)
+    t8 = TensorNQueens.generate_8_tensor(Int)
+    @test ein"abi,cdi,efi,ghi->aceghfdb"(t,t,t,t) == t8
+end
+
+@testset "generate_3_tensor_network" begin
+    n = 7
+    code, tensors = generate_3_tensor_network(n, Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    @info contraction_complexity(optcode, uniformsize(optcode, 2))
+    @test optcode(tensors...)[] == 40
+end
+
+@testset "benchmarking" begin
+    # for n in 1:15
+    for n in 1:1
+        code, tensors = generate_3_tensor_network(n, Int)
+        time_start = time()
+        @info "n = $n"
+        optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+        @info contraction_complexity(optcode, uniformsize(optcode, 2))
+        time_end1 = time()
+        @info optcode(tensors...)[]
+        time_end2 = time()
+        @info "time = $(time_end1 - time_start), $(time_end2 - time_end1)"
+        println()
+    end
 end
