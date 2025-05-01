@@ -1,6 +1,6 @@
 using Test
 using TensorNQueens
-using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network
+using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network,generate_masked_3_tensor_network
 using OMEinsum
 
 @testset "generate_tensor" begin
@@ -82,4 +82,17 @@ end
         @info "time = $(time_end1 - time_start), $(time_end2 - time_end1)"
         println()
     end
+end
+
+@testset "generate_masked_3_tensor_network" begin
+    n = 3
+    t9_lattice = generate_TensorNQ_lattice(n)
+    code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[(2,1)],[], Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    @info optcode(tensors...)[]
+
+    code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[],[(2,1)], Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    @info optcode(tensors...)[]
+    # @test optcode(tensors...)[] == 40
 end
