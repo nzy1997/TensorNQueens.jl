@@ -30,54 +30,11 @@ function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,pos1::V
     pos11 = copy(pos11)
     lattice_copy = deepcopy(lattice)
     for (i,j) in pos1
-        for (index,(id,jd)) in enumerate(get_pos8())
-            i_new,j_new = i,j
-            while checkbounds(Bool,lattice,i_new+id,j_new+jd)
-                i_new += id
-                j_new += jd
-                push!(pos0,(i_new,j_new))
-            end
-            rm_t = lattice[i_new,j_new].labels[index]
-            if index < 5
-                setdiff!(pos10,rm_t)
-            elseif index == 8 || index == 5
-                setdiff!(pos01,rm_t)
-            else
-                setdiff!(pos11,rm_t)
-            end
-        end
-        setdiff!(pos11,lattice_copy[i,j].labels[5])
+        remove1!(pos0,pos10,pos01,pos11,lattice_copy,i,j)
     end
-    @show pos0
     sort!(pos0, by = x -> (x[2], x[1]))
-    @show pos10
     for (i,j) in pos0
-        for (index,(id,jd)) in enumerate(get_pos8()[1:4])
-            i_new,j_new = i+id,j+jd
-            if checkbounds(Bool,lattice,i_new,j_new)
-                edge_ind = lattice_copy[i_new,j_new].labels[10 - index]
-                lattice_copy[i,j].labels[index] = edge_ind
-                
-            else
-                edge_ind = lattice_copy[i,j].labels[index]
-  
-            end
-            i_new,j_new = i - id,j - jd
-            if checkbounds(Bool,lattice,i_new,j_new)
-                lattice_copy[i_new,j_new].labels[index] = edge_ind
-            else
-                if index == 1 || index == 4
-                    replace!(pos01,lattice_copy[i,j].labels[10-index] => edge_ind)
-                else
-                    @show pos11
-                    @info lattice_copy[i,j].labels[10-index] => edge_ind
-                    replace!(pos11,lattice_copy[i,j].labels[10-index] => edge_ind)
-                    @show pos11
-                end
-            end
-            lattice_copy[i,j].labels[10 - index] = edge_ind
-        end
-        setdiff!(pos11,lattice_copy[i,j].labels[5])
+        remove0!(pos01,pos11,lattice_copy,i,j)
     end
     t3_ixs = Vector{Vector{Int}}()
 
@@ -92,8 +49,96 @@ function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,pos1::V
     end
     t10,t01,t11 = generate01tensors(T)
     t3 = generate_3_tensor(T)
-    @show pos10
-    @show pos11
-    @show pos01
     return DynamicEinCode(vcat(t3_ixs , [[p] for p in pos10] , [[p] for p in pos01] ,  [[p] for p in pos11]),Int[]),[fill(t3,length(t3_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
 end
+
+function show_lattice(lattice::Matrix{TensorNQ})
+    n = size(lattice,1)
+    mat = zeros(Int,3*n,3*n)
+    for i in 1:n
+        for j in 1:n
+            mat[3*i-2:3*i,3*j-2:3*j] = [lattice[i,j].labels[3] lattice[i,j].labels[4] lattice[i,j].labels[8]; lattice[i,j].labels[1] lattice[i,j].labels[5] lattice[i,j].labels[9]; lattice[i,j].labels[2] lattice[i,j].labels[6] lattice[i,j].labels[7]]
+        end
+    end
+    display(mat)
+end
+
+function remove1!(pos0,pos10,pos01,pos11,lattice_copy,i,j)
+    for (index,(id,jd)) in enumerate(get_pos8())
+        i_new,j_new = i,j
+        while checkbounds(Bool,lattice_copy,i_new+id,j_new+jd)
+            i_new += id
+            j_new += jd
+            push!(pos0,(i_new,j_new))
+        end
+        rm_t = lattice_copy[i_new,j_new].labels[index]
+        rm_t = rm_t > 4 ? rm_t + 1 : rm_t
+        if index < 5
+            setdiff!(pos10,rm_t)
+        elseif index == 8 || index == 5
+            setdiff!(pos01,rm_t)
+        else
+            setdiff!(pos11,rm_t)
+        end
+    end
+    setdiff!(pos11,lattice_copy[i,j].labels[5])
+end
+
+function remove0!(pos01,pos11,lattice_copy,i,j)
+    for (index,(id,jd)) in enumerate(get_pos8()[1:4])
+        i_new,j_new = i+id,j+jd
+        if checkbounds(Bool,lattice_copy,i_new,j_new)
+            edge_ind = lattice_copy[i_new,j_new].labels[10 - index]
+            lattice_copy[i,j].labels[index] = edge_ind
+            
+        else
+            edge_ind = lattice_copy[i,j].labels[index]
+
+        end
+        i_new,j_new = i - id,j - jd
+        if checkbounds(Bool,lattice_copy,i_new,j_new)
+            lattice_copy[i_new,j_new].labels[index] = edge_ind
+        else
+            if index == 1 || index == 4
+                replace!(pos01,lattice_copy[i,j].labels[10-index] => edge_ind)
+            else
+                replace!(pos11,lattice_copy[i,j].labels[10-index] => edge_ind)
+            end
+        end
+        lattice_copy[i,j].labels[10 - index] = edge_ind
+    end
+    setdiff!(pos11,lattice_copy[i,j].labels[5])
+end
+
+# label the chess board 
+# 1 n+1 ... n^2-n +1
+# |  |      |    
+# 2 n+2 ... n^2-n+2
+# |  |      |    
+# ... ... ...
+# n 2n  ... n^2
+
+function generate_pos_vec(n,mask,val)
+    pos0 = Vector{Tuple{Int,Int}}()
+    pos1 = Vector{Tuple{Int,Int}}()
+    for i in 1:n
+        for j in 1:n
+            bit_pos = (i-1)*n + j
+            if readbit(mask,bit_pos) == 1
+                if readbit(val,bit_pos) == 1
+                    push!(pos1,(j,i))
+                else
+                    push!(pos0,(j,i))
+                end
+            end
+        end
+    end
+    return pos0,pos1
+end
+
+function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,mask,val,T)
+    pos0,pos1 = generate_pos_vec(n,mask,val)
+    return generate_masked_3_tensor_network(n,t9_lattice,pos1,pos0,T)
+end
+
+

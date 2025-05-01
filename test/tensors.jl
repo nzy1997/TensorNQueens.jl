@@ -84,15 +84,38 @@ end
     end
 end
 
+@testset "generate_pos_vec" begin
+    n = 4
+    pos0, pos1 = TensorNQueens.generate_pos_vec(n, 0b011010111, 0b001000111)
+    @test pos0 == [(1, 2), (4, 2)]
+    @test pos1 == [(1, 1), (2, 1), (3, 1), (3, 2)]
+end
+
 @testset "generate_masked_3_tensor_network" begin
-    n = 3
+    n = 5
     t9_lattice = generate_TensorNQ_lattice(n)
     code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[(2,1)],[], Int)
     optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
-    @info optcode(tensors...)[]
+    ans1 = optcode(tensors...)[]
 
     code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[],[(2,1)], Int)
     optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
-    @info optcode(tensors...)[]
-    # @test optcode(tensors...)[] == 40
+    ans2 = optcode(tensors...)[]
+    @test ans1 + ans2 == 10
+end
+
+
+@testset "generate_masked_3_tensor_network" begin
+    n = 5
+    t9_lattice = generate_TensorNQ_lattice(n)
+    mask = 0b11
+    val_vec = [0b00,0b01,0b10]
+    s = 0 
+    for val in val_vec
+        code, tensors = generate_masked_3_tensor_network(n,t9_lattice,mask,val, Int)
+        optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+        s += optcode(tensors...)[]
+        @show s
+    end
+    @test s == 10
 end

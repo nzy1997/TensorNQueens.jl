@@ -1,7 +1,7 @@
 module TensorNQueens
 
-# Write your package code here.
 using OMEinsum
+using BitBasis
 
 include("tensors.jl")
 include("tensor8.jl")
