@@ -49,6 +49,11 @@ function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,pos1::V
     end
     t10,t01,t11 = generate01tensors(T)
     t3 = generate_3_tensor(T)
+    # show_lattice(lattice)
+    # show_lattice(lattice_copy)
+    # @show pos10
+    # @show pos01
+    # @show pos11
     return DynamicEinCode(vcat(t3_ixs , [[p] for p in pos10] , [[p] for p in pos01] ,  [[p] for p in pos11]),Int[]),[fill(t3,length(t3_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
 end
 
@@ -71,11 +76,11 @@ function remove1!(pos0,pos10,pos01,pos11,lattice_copy,i,j)
             j_new += jd
             push!(pos0,(i_new,j_new))
         end
-        rm_t = lattice_copy[i_new,j_new].labels[index]
-        rm_t = rm_t > 4 ? rm_t + 1 : rm_t
-        if index < 5
+        index2 = index > 4 ? index + 1 : index
+        rm_t = lattice_copy[i_new,j_new].labels[index2]
+        if index2 < 5
             setdiff!(pos10,rm_t)
-        elseif index == 8 || index == 5
+        elseif index2 == 9 || index2 == 6
             setdiff!(pos01,rm_t)
         else
             setdiff!(pos11,rm_t)
@@ -140,5 +145,3 @@ function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,mask,va
     pos0,pos1 = generate_pos_vec(n,mask,val)
     return generate_masked_3_tensor_network(n,t9_lattice,pos1,pos0,T)
 end
-
-

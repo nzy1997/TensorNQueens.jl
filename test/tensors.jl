@@ -111,3 +111,50 @@ end
     end
     @test s == 10
 end
+
+@testset "benchmarking on branching" begin
+    n = 9
+    col = 5
+    s = Int[]
+    for row in 1:5
+        t9_lattice = generate_TensorNQ_lattice(n)
+        code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[(row,col)],[], Int)
+        optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+        @info "row = $row"
+        @info contraction_complexity(optcode, uniformsize(optcode, 2))
+        s1 = optcode(tensors...)[]
+        @info "s1 = $s1"
+        push!(s,s1)
+    end
+    @test 2 * sum(s[1:4])+s[5] == 352
+end
+
+
+@testset "generate_masked_3_tensor_network" begin
+    n = 5
+    t9_lattice = generate_TensorNQ_lattice(n)
+    code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[(1,3)],[], Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    ans1 = optcode(tensors...)[]
+    @test ans1 == 2
+end
+
+@testset "generate_masked_3_tensor_network" begin
+    for n in 28:28
+        code, tensors = generate_3_tensor_network(n, Int)
+        t9_lattice = generate_TensorNQ_lattice(n)
+
+        code2, tensors2 = generate_masked_3_tensor_network(n,t9_lattice,[(1,n÷2 +1)],[], Int)
+        time_start = time()
+        @info "n = $n"
+        optcode = optimize_code(code, uniformsize(code, 2), KaHyParBipartite(sc_target=82))
+        @info contraction_complexity(optcode, uniformsize(optcode, 2))
+        time_end1 = time()
+
+        optcode2 = optimize_code(code2, uniformsize(code2, 2), KaHyParBipartite(sc_target=82))
+        @info contraction_complexity(optcode2, uniformsize(optcode2, 2))
+        time_end2 = time()
+        @info "time = $(time_end1 - time_start), $(time_end2 - time_end1)"
+        println()
+    end
+end
