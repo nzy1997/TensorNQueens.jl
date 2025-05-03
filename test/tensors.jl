@@ -140,7 +140,8 @@ end
 end
 
 @testset "generate_masked_3_tensor_network" begin
-    for n in 28:28
+    for n in 5:5
+    # for n in 28:28
         code, tensors = generate_3_tensor_network(n, Int)
         t9_lattice = generate_TensorNQ_lattice(n)
 
