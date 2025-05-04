@@ -2,12 +2,11 @@ function generate_3_tensor(T)
     return T[[1 0;0 1];;;[0 1;0 0]]
 end
 
-
 function generate_3_tensor_network(n::Int,T)
     t9_lattice = generate_TensorNQ_lattice(n)
     return generate_3_tensor_network(t9_lattice,T)
 end
-function generate_3_tensor_network(t9_lattice::TensorNQ_lattice,T)
+function generate_3_tensor_network(t9_lattice::TensorNQLattice,T)
     lattice,pos10,pos01,pos11 = t9_lattice.lattice,t9_lattice.pos10,t9_lattice.pos01,t9_lattice.pos11
     t3_ixs = Vector{Vector{Int}}()
     t9_ixs = getfield.(vec(lattice),:labels)
@@ -22,27 +21,15 @@ function generate_3_tensor_network(t9_lattice::TensorNQ_lattice,T)
     return DynamicEinCode(t3_ixs ∪ [[p] for p in pos10] ∪ [[p] for p in pos01] ∪  [[p] for p in pos11],Int[]),[fill(t3,length(t3_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
 end
 
-
-function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,pos1::Vector,pos0::Vector,T)
-    lattice,pos10,pos01,pos11 = t9_lattice.lattice,t9_lattice.pos10,t9_lattice.pos01,t9_lattice.pos11
-    pos10 = copy(pos10)
-    pos01 = copy(pos01)
-    pos11 = copy(pos11)
-    lattice_copy = deepcopy(lattice)
-    for (i,j) in pos1
-        remove1!(pos0,pos10,pos01,pos11,lattice_copy,i,j)
-    end
-    sort!(pos0, by = x -> (x[2], x[1]))
-    for (i,j) in pos0
-        remove0!(pos01,pos11,lattice_copy,i,j)
-    end
+function generate_masked_3_tensor_network(n,t9_lattice::TensorNQLattice,pos1::Vector,pos0::Vector,T)
+    masked_lattice = generate_MaskedTensorNQLattice(n,t9_lattice,pos1,pos0,T)
     t3_ixs = Vector{Vector{Int}}()
 
     for i in 1:n
         for j in 1:n
-            if (i,j) ∉ pos0 && (i,j) ∉ pos1
+            if (i,j) ∉ masked_lattice.pos0 && (i,j) ∉ masked_lattice.pos1
                 for index in 1:4
-                    push!(t3_ixs,[lattice_copy[i,j].labels[index],lattice_copy[i,j].labels[10-index],lattice_copy[i,j].labels[5]])
+                    push!(t3_ixs,[masked_lattice.lattice[i,j].labels[index],masked_lattice.lattice[i,j].labels[10-index],masked_lattice.lattice[i,j].labels[5]])
                 end
             end
         end
@@ -54,7 +41,7 @@ function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,pos1::V
     # @show pos10
     # @show pos01
     # @show pos11
-    return DynamicEinCode(vcat(t3_ixs , [[p] for p in pos10] , [[p] for p in pos01] ,  [[p] for p in pos11]),Int[]),[fill(t3,length(t3_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
+    return DynamicEinCode(vcat(t3_ixs , [[p] for p in masked_lattice.pos10] , [[p] for p in masked_lattice.pos01] ,  [[p] for p in masked_lattice.pos11]),Int[]),[fill(t3,length(t3_ixs))...,fill(t10,length(masked_lattice.pos10))...,fill(t01,length(masked_lattice.pos01))...,fill(t11,length(masked_lattice.pos11))...]
 end
 
 function show_lattice(lattice::Matrix{TensorNQ})
@@ -141,7 +128,7 @@ function generate_pos_vec(n,mask,val)
     return pos0,pos1
 end
 
-function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,mask,val,T)
+function generate_masked_3_tensor_network(n,t9_lattice::TensorNQLattice,mask,val,T)
     pos0,pos1 = generate_pos_vec(n,mask,val)
     return generate_masked_3_tensor_network(n,t9_lattice,pos1,pos0,T)
 end

@@ -57,3 +57,27 @@ function generate_8_tensor_network(n::Int,T)
     t10,t01,t11 = generate01tensors(T)
     return DynamicEinCode(t8_ixs ∪ [[p] for p in pos10] ∪ [[p] for p in pos01] ∪  [[p] for p in pos11],Int[]),[fill(t,length(t8_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
 end
+
+
+function generate_masked_8_tensor_network(n,t9_lattice::TensorNQLattice,pos1::Vector,pos0::Vector,T)
+    masked_lattice = generate_MaskedTensorNQLattice(n,t9_lattice,pos1,pos0,T)
+    t8_ixs = Vector{Vector{Int}}()
+    pos11 = copy(masked_lattice.pos11)
+    for i in 1:n
+        for j in 1:n
+            if (i,j) ∉ masked_lattice.pos0 && (i,j) ∉ masked_lattice.pos1
+                push!(t8_ixs,vcat(masked_lattice.lattice[i,j].labels[1:4],masked_lattice.lattice[i,j].labels[6:9]))
+                setdiff!(pos11,masked_lattice.lattice[i,j].labels[5])
+            end
+        end
+    end
+    t = generate_8_tensor(T)
+    t10,t01,t11 = generate01tensors(T)
+
+    return DynamicEinCode(vcat(t8_ixs , [[p] for p in masked_lattice.pos10] , [[p] for p in masked_lattice.pos01] ,  [[p] for p in pos11]),Int[]),[fill(t,length(t8_ixs))...,fill(t10,length(masked_lattice.pos10))...,fill(t01,length(masked_lattice.pos01))...,fill(t11,length(pos11))...]
+end
+
+function generate_masked_8_tensor_network(n,t9_lattice::TensorNQLattice,mask,val,T)
+    pos0,pos1 = generate_pos_vec(n,mask,val)
+    return generate_masked_8_tensor_network(n,t9_lattice,pos1,pos0,T)
+end
