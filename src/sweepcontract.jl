@@ -33,7 +33,6 @@ function generate_planar_lattice(n::Int)
             res[i,j] = TensorNQ(index_vec)
         end
     end
-    show_lattice(res)
     return TensorNQLattice(res, pos10,pos01,pos11),label_count
 end
 
