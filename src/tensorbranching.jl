@@ -176,6 +176,7 @@ function position_branching(n::Int, t9_lattice::TensorNQ_lattice, code::DynamicE
 
     #optimal branching
     candidates = OptimalBranchingMIS.OptimalBranchingCore.candidate_clauses(tbl)
+    println("candidates:", length(candidates))
     subsets = [OptimalBranchingMIS.OptimalBranchingCore.covered_items(tbl.table, c) for c in candidates]
     num_items = length(tbl.table)
     weights = sc_score_weights(n,t9_lattice,sc_target,region_vertices,candidates)

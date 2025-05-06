@@ -40,7 +40,7 @@ using Graphs
     coefficient = 1.0
     solver = OptimalBranchingMIS.OptimalBranchingCore.IPSolver(optimizer=SCIP.Optimizer)
     k_ud = 0
-    k_lr = 3
+    k_lr = 2
     n_max = 20
     sc_target = 25
     region_selector = ScRectangleSelector(k_ud, k_lr, n_max, sc_target) 
