@@ -59,7 +59,7 @@ function get_pos()
     return [(0,-1), (1,-1), (-1,-1), (-1,0),(0,0), (1,0), (1,1),(-1,1),(0,1)]
 end
 
-struct TensorNQ_lattice
+struct TensorNQLattice
     lattice::Matrix{TensorNQ}
     pos10::Vector{Int}
     pos01::Vector{Int}
@@ -102,7 +102,7 @@ function generate_TensorNQ_lattice(n::Int)
             res[i,j] = TensorNQ(index_vec)
         end
     end
-    return TensorNQ_lattice(res, pos10,pos01,pos11 ∪ [res[i,j].labels[5] for i in 1:n, j in 1:n])
+    return TensorNQLattice(res, pos10,pos01,pos11 ∪ [res[i,j].labels[5] for i in 1:n, j in 1:n])
 end
 
 function generate_tensor_network(n::Int,T)
@@ -112,4 +112,29 @@ function generate_tensor_network(n::Int,T)
     t = generate_tensor(T)
     t10,t01,t11 = generate01tensors(T)
     return DynamicEinCode(t9_ixs ∪ [[p] for p in pos10] ∪ [[p] for p in pos01] ∪  [[p] for p in pos11],Int[]),[fill(t,length(t9_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
+end
+
+struct MaskedTensorNQLattice
+    lattice::Matrix{TensorNQ}
+    pos10::Vector{Int}
+    pos01::Vector{Int}
+    pos11::Vector{Int}
+    pos0::Vector{Tuple{Int,Int}}
+    pos1::Vector{Tuple{Int,Int}}
+end
+
+function generate_MaskedTensorNQLattice(n,t9_lattice::TensorNQLattice,pos1::Vector,pos0::Vector,T)
+    lattice,pos10,pos01,pos11 = t9_lattice.lattice,t9_lattice.pos10,t9_lattice.pos01,t9_lattice.pos11
+    pos10 = copy(pos10)
+    pos01 = copy(pos01)
+    pos11 = copy(pos11)
+    lattice_copy = deepcopy(lattice)
+    for (i,j) in pos1
+        remove1!(pos0,pos10,pos01,pos11,lattice_copy,i,j)
+    end
+    sort!(pos0, by = x -> (x[2], x[1]))
+    for (i,j) in pos0
+        remove0!(pos01,pos11,lattice_copy,i,j)
+    end
+    return MaskedTensorNQLattice(lattice_copy,pos10,pos01,pos11,pos0,pos1)
 end
