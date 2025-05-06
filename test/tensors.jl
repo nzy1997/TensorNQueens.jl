@@ -184,3 +184,11 @@ end
     end
     @test s == 10
 end
+
+@testset "swap_tensor" begin
+    t = TensorNQueens.swap_tensor(Int)
+    v1 = [1,0]
+    v2 = [0,1]
+    @test ein"abcd,a,b,c,d -> "(t,v1,v2,v1,v2) == 0
+    @test ein"abcd,a,b,c,d -> "(t,v1,v2,v2,v1) == 1
+end

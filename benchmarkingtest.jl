@@ -1,15 +1,15 @@
 using Test
 using TensorNQueens
-using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network,generate_masked_3_tensor_network
+using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network,generate_masked_8_tensor_network
 using OMEinsum
 
 @testset "generate_masked_3_tensor_network" begin
-    solver = TreeSA(niters = 200, βs=0.01:0.01:10, ntrials=2,sc_weight = 5.0)
+    solver = TreeSA(niters = 500)
     for n in 28:28
-        code, tensors = generate_3_tensor_network(n, Int)
+        code, tensors = generate_8_tensor_network(n, Int)
         t9_lattice = generate_TensorNQ_lattice(n)
 
-        code2, tensors2 = generate_masked_3_tensor_network(n,t9_lattice,[(1,n÷2 +1)],[], Int)
+        code2, tensors2 = generate_masked_8_tensor_network(n,t9_lattice,[(1,n÷2 +1)],[], Int)
         time_start = time()
         @info "n = $n"
         optcode = optimize_code(code, uniformsize(code, 2), solver)
