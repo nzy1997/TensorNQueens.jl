@@ -114,7 +114,7 @@ function generate_pos_vec(n,mask,val)
     pos0 = Vector{Tuple{Int,Int}}()
     pos1 = Vector{Tuple{Int,Int}}()
     for i in 1:n
-        for j in 1:n
+        for j in 1:n  #i:col, j:row
             bit_pos = (i-1)*n + j
             if readbit(mask,bit_pos) == 1
                 if readbit(val,bit_pos) == 1
@@ -122,6 +122,24 @@ function generate_pos_vec(n,mask,val)
                 else
                     push!(pos0,(j,i))
                 end
+            end
+        end
+    end
+    return pos0,pos1
+end
+
+#When the clause is local, generate the corresponding pos1 and pos0
+function generate_pos_vec_local(t9_lattice::TensorNQLattice,region_vertices::Vector{Int},mask,val)
+    pos0 = Vector{Tuple{Int,Int}}()
+    pos1 = Vector{Tuple{Int,Int}}()
+    for bit_pos in 1:length(region_vertices)
+        vertex = region_vertices[bit_pos]
+        pos = Tuple(findfirst(x -> x.labels[5] == vertex, t9_lattice.lattice))
+        if readbit(mask,bit_pos) == 1
+            if readbit(val,bit_pos) == 1
+                push!(pos1,pos)
+            else
+                push!(pos0,pos)
             end
         end
     end
