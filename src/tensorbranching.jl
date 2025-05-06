@@ -50,7 +50,7 @@ function truth_table(code::DynamicEinCode, tensors::Vector, region_vertices::Vec
 end
 
 #Calculate the weight of each candidate, which is the truncated_sc of the new TN after fixing the corresponding variable values of the candidate
-function sc_score_weight(n::Int, t9_lattice::TensorNQ_lattice, sc_target::Int, region_vertices::Vector{Int}, candidate)
+function sc_score_weight(n::Int, t9_lattice::TensorNQLattice, sc_target::Int, region_vertices::Vector{Int}, candidate)
     pos0, pos1 = generate_pos_vec_local(t9_lattice, region_vertices, candidate.mask, candidate.val)
     code, tensors = generate_masked_3_tensor_network(n,t9_lattice,pos1,pos0,Int)
     optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
@@ -63,7 +63,7 @@ function sc_score_weight(n::Int, t9_lattice::TensorNQ_lattice, sc_target::Int, r
 end
 
 
-function sc_score_weights(n::Int, t9_lattice::TensorNQ_lattice, sc_target::Int,  region_vertices::Vector{Int}, candidates)
+function sc_score_weights(n::Int, t9_lattice::TensorNQLattice, sc_target::Int,  region_vertices::Vector{Int}, candidates)
     weights = [sc_score_weight(n, t9_lattice, sc_target, region_vertices, c) for c in candidates]
     return weights
 end
@@ -71,7 +71,7 @@ end
 
 #When region_selector == ScNeighborSelector:
 #Generate a graph for pos_vertices based on their connections in the code, and generate k-neighbors for each vertex
-function generate_neighbors(n::Int, t9_lattice::TensorNQ_lattice, pos_vertices::Vector{Int}, code::DynamicEinCode, region_selector::ScNeighborSelector)
+function generate_neighbors(n::Int, t9_lattice::TensorNQLattice, pos_vertices::Vector{Int}, code::DynamicEinCode, region_selector::ScNeighborSelector)
     lattice = t9_lattice.lattice
     bonds = getixsv(code)
     pos_vertices_neighbors = [
@@ -98,7 +98,7 @@ end
 
 #When region_selector == ScRectangleSelector:
 #Generate the rectangle region of size [k_ud,k_lr] centered at each pos_vertex
-function generate_neighbors(n::Int, t9_lattice::TensorNQ_lattice, pos_vertices::Vector{Int}, code::DynamicEinCode, region_selector::ScRectangleSelector)
+function generate_neighbors(n::Int, t9_lattice::TensorNQLattice, pos_vertices::Vector{Int}, code::DynamicEinCode, region_selector::ScRectangleSelector)
     neighbors = []
     for pos_vertex in pos_vertices
         iv,jv = Tuple(findfirst(x -> x.labels[5] == pos_vertex, t9_lattice.lattice))
@@ -119,7 +119,7 @@ end
 #(1) Generate a graph for pos_vertices based on their connections in the code
 #(2) Find k-th order neighbors for each pos_vertex on this graph
 #(3) On the contraction tree corresponding to optcode, remove vertices from each neighbor and see which gives the smallest truncated_sc
-function branching_region(n::Int, t9_lattice::TensorNQ_lattice, region_selector::ScNeighborSelector, code, optcode)
+function branching_region(n::Int, t9_lattice::TensorNQLattice, region_selector::ScNeighborSelector, code, optcode)
     pos_vertices = vec([t9_lattice.lattice[i,j].labels[5] for i in 1:n, j in 1:n])
     bonds = getixsv(code)
     vertices_in_bonds = unique(Iterators.flatten(bonds))
@@ -144,7 +144,7 @@ end
 
 #When region_selector == ScRectangleSelector:
 #Generate the rectangle region of size [k_ud,k_lr] centered at each pos_vertex
-function branching_region(n::Int, t9_lattice::TensorNQ_lattice, region_selector::ScRectangleSelector, code, optcode)
+function branching_region(n::Int, t9_lattice::TensorNQLattice, region_selector::ScRectangleSelector, code, optcode)
     pos_vertices =vec([t9_lattice.lattice[i,j].labels[5] for i in 1:n, j in 1:n])
     bonds = getixsv(code)
     vertices_in_bonds = unique(Iterators.flatten(bonds))
@@ -168,7 +168,7 @@ end
 
 
 #Each time select a region from pos_vertices=[lattice[i,j].labels[5]], calculate the tbl derived from their mutual constraints and find optimal branching clauses
-function position_branching(n::Int, t9_lattice::TensorNQ_lattice, code::DynamicEinCode, tensors::Vector, sc_target::Int, region_vertices::Vector, solver)
+function position_branching(n::Int, t9_lattice::TensorNQLattice, code::DynamicEinCode, tensors::Vector, sc_target::Int, region_vertices::Vector, solver)
     #generate the truth table
     region_vertices = [Int(x) for x in region_vertices]
     configs = truth_table(code, tensors, region_vertices)
@@ -196,7 +196,7 @@ end
 
 
 #Depth-first search, where branch_coefficients are the coefficients to multiply for each branch
-function tensor_branching(n::Int, t9_lattice::TensorNQ_lattice, pos1::Vector, pos0::Vector, coefficient::Float64, sc_target::Int, region_selector::ScRectangleSelector, IP_solver)
+function tensor_branching(n::Int, t9_lattice::TensorNQLattice, pos1::Vector, pos0::Vector, coefficient::Float64, sc_target::Int, region_selector::ScRectangleSelector, IP_solver)
     code, tensors = generate_masked_3_tensor_network(n,t9_lattice,pos1,pos0,Int)
     optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
     cc = contraction_complexity(optcode, uniformsize(optcode, 2))

@@ -129,7 +129,7 @@ function generate_pos_vec(n,mask,val)
 end
 
 #When the clause is local, generate the corresponding pos1 and pos0
-function generate_pos_vec_local(t9_lattice::TensorNQ_lattice,region_vertices::Vector{Int},mask,val)
+function generate_pos_vec_local(t9_lattice::TensorNQLattice,region_vertices::Vector{Int},mask,val)
     pos0 = Vector{Tuple{Int,Int}}()
     pos1 = Vector{Tuple{Int,Int}}()
     for bit_pos in 1:length(region_vertices)
@@ -146,7 +146,7 @@ function generate_pos_vec_local(t9_lattice::TensorNQ_lattice,region_vertices::Ve
     return pos0,pos1
 end
 
-function generate_masked_3_tensor_network(n,t9_lattice::TensorNQ_lattice,mask,val,T)
+function generate_masked_3_tensor_network(n,t9_lattice::TensorNQLattice,mask,val,T)
     pos0,pos1 = generate_pos_vec(n,mask,val)
     return generate_masked_3_tensor_network(n,t9_lattice,pos1,pos0,T)
 end
