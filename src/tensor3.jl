@@ -49,7 +49,11 @@ function show_lattice(lattice::Matrix{TensorNQ})
     mat = zeros(Int,3*n,3*n)
     for i in 1:n
         for j in 1:n
-            mat[3*i-2:3*i,3*j-2:3*j] = [lattice[i,j].labels[3] lattice[i,j].labels[4] lattice[i,j].labels[8]; lattice[i,j].labels[1] lattice[i,j].labels[5] lattice[i,j].labels[9]; lattice[i,j].labels[2] lattice[i,j].labels[6] lattice[i,j].labels[7]]
+            if length(lattice[i,j].labels) == 9
+                mat[3*i-2:3*i,3*j-2:3*j] = [lattice[i,j].labels[3] lattice[i,j].labels[4] lattice[i,j].labels[8]; lattice[i,j].labels[1] lattice[i,j].labels[5] lattice[i,j].labels[9]; lattice[i,j].labels[2] lattice[i,j].labels[6] lattice[i,j].labels[7]]
+            else
+                mat[3*i-2:3*i,3*j-2:3*j] = [lattice[i,j].labels[3] lattice[i,j].labels[4] lattice[i,j].labels[7]; lattice[i,j].labels[1] 0 lattice[i,j].labels[8]; lattice[i,j].labels[2] lattice[i,j].labels[5] lattice[i,j].labels[6]]
+            end
         end
     end
     display(mat)

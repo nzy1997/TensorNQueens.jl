@@ -184,3 +184,13 @@ end
     end
     @test s == 10
 end
+
+
+@testset "generate_8_tensor_network" begin
+    n = 7
+    code, tensors = generate_8_tensor_network(n, Int)
+    optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
+    t = optcode(tensors...)
+    @show count(isone, t)
+    @show count(iszero, t)
+end

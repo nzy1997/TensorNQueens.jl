@@ -22,7 +22,7 @@ function generate_8_TensorNQ_lattice(n::Int)
     pos01 = Int[]
     pos10 = Int[]
     for i in 1:n
-        for j in 1:n
+        for j in 1:n÷2
             index_vec = fill(-1,8)
             for (ind,pos) in enumerate(pos_vec)
                 if checkbounds(Bool,res,i+pos[1],j+pos[2])
@@ -53,9 +53,19 @@ end
 function generate_8_tensor_network(n::Int,T)
     lattice,pos10,pos01,pos11,_ = generate_8_TensorNQ_lattice(n)
     t8_ixs = getfield.(vec(lattice),:labels)
+    firstminus1 = findfirst(x -> x[1]==-1,t8_ixs)
+    t8_ixs = t8_ixs[1:firstminus1-1]
     t = generate_8_tensor(T)
     t10,t01,t11 = generate01tensors(T)
-    return DynamicEinCode(t8_ixs ∪ [[p] for p in pos10] ∪ [[p] for p in pos01] ∪  [[p] for p in pos11],Int[]),[fill(t,length(t8_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
+    inds = t8_ixs ∪ [[p] for p in pos10] ∪ [[p] for p in pos01] ∪  [[p] for p in pos11]
+    max_ind = maximum(maximum.(inds))
+    z = zeros(Int,max_ind)
+    for i in inds
+        for j in i
+            z[j] += 1
+        end
+    end
+    return DynamicEinCode(inds , findall(isone, z)),[fill(t,length(t8_ixs))...,fill(t10,length(pos10))...,fill(t01,length(pos01))...,fill(t11,length(pos11))...]
 end
 
 
