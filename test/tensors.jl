@@ -141,8 +141,7 @@ end
 
 @testset "generate_masked_8_tensor_network" begin
     solver = TreeSA()
-    # for n in 5:5
-    for n in 5:28
+    for n in 5:8
         code, tensors = generate_8_tensor_network(n, Int)
         t9_lattice = generate_TensorNQ_lattice(n)
 

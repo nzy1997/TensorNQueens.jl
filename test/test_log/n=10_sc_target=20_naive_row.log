@@ -1,0 +1,1625 @@
+
+depth: 1
+branches: Any[[[(1, 1)], [(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10)]], [[(1, 2)], [(1, 1), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10)]], [[(1, 3)], [(1, 1), (1, 2), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10)]], [[(1, 4)], [(1, 1), (1, 2), (1, 3), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10)]], [[(1, 5)], [(1, 1), (1, 2), (1, 3), (1, 4), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10)]], [[(1, 6)], [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 7), (1, 8), (1, 9), (1, 10)]], [[(1, 7)], [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 8), (1, 9), (1, 10)]], [[(1, 8)], [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 9), (1, 10)]], [[(1, 9)], [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 10)]], [[(1, 10)], [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9)]]]
+chosen_i: 1, chosen_j: 0
+sc before branch: 28.0
+
+depth: 2
+branches: Any[[[(2, 3)], [(2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 4)], [(2, 3), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 5)], [(2, 3), (2, 4), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 6)], [(2, 3), (2, 4), (2, 5), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 7)], [(2, 3), (2, 4), (2, 5), (2, 6), (2, 8), (2, 9), (2, 10)]], [[(2, 8)], [(2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 9), (2, 10)]], [[(2, 9)], [(2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 10)]], [[(2, 10)], [(2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 4
+
+depth: 3
+branches: Any[[[(3, 2)], [(3, 6), (3, 7), (3, 8), (3, 9), (3, 10)]], [[(3, 6)], [(3, 2), (3, 7), (3, 8), (3, 9), (3, 10)]], [[(3, 7)], [(3, 2), (3, 6), (3, 8), (3, 9), (3, 10)]], [[(3, 8)], [(3, 2), (3, 6), (3, 7), (3, 9), (3, 10)]], [[(3, 9)], [(3, 2), (3, 6), (3, 7), (3, 8), (3, 10)]], [[(3, 10)], [(3, 2), (3, 6), (3, 7), (3, 8), (3, 9)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 6
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 3
+	sc: 19.0
+	counting_branch: 6
+
+end:
+	depth: 3
+	sc: 18.0
+	counting_branch: 13
+
+end:
+	depth: 3
+	sc: 19.0
+	counting_branch: 10
+
+depth: 3
+branches: Any[[[(3, 2)], [(3, 4), (3, 5), (3, 6), (3, 10)]], [[(3, 4)], [(3, 2), (3, 5), (3, 6), (3, 10)]], [[(3, 5)], [(3, 2), (3, 4), (3, 6), (3, 10)]], [[(3, 6)], [(3, 2), (3, 4), (3, 5), (3, 10)]], [[(3, 10)], [(3, 2), (3, 4), (3, 5), (3, 6)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 5
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 1
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 5
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 2
+
+depth: 2
+branches: Any[[[(2, 4)], [(2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 5)], [(2, 4), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 6)], [(2, 4), (2, 5), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 7)], [(2, 4), (2, 5), (2, 6), (2, 8), (2, 9), (2, 10)]], [[(2, 8)], [(2, 4), (2, 5), (2, 6), (2, 7), (2, 9), (2, 10)]], [[(2, 9)], [(2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 10)]], [[(2, 10)], [(2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+depth: 3
+branches: Any[[[(5, 3)], [(5, 5), (5, 8), (5, 9), (5, 10)]], [[(5, 5)], [(5, 3), (5, 8), (5, 9), (5, 10)]], [[(5, 8)], [(5, 3), (5, 5), (5, 9), (5, 10)]], [[(5, 9)], [(5, 3), (5, 5), (5, 8), (5, 10)]], [[(5, 10)], [(5, 3), (5, 5), (5, 8), (5, 9)]]]
+chosen_i: 5, chosen_j: 0
+sc before branch: 22.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 14.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 12
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 8
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 6
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 3), (3, 5), (3, 6), (3, 10)]], [[(3, 3)], [(3, 1), (3, 5), (3, 6), (3, 10)]], [[(3, 5)], [(3, 1), (3, 3), (3, 6), (3, 10)]], [[(3, 6)], [(3, 1), (3, 3), (3, 5), (3, 10)]], [[(3, 10)], [(3, 1), (3, 3), (3, 5), (3, 6)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 2
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 3), (3, 5), (3, 6), (3, 7)]], [[(3, 3)], [(3, 1), (3, 5), (3, 6), (3, 7)]], [[(3, 5)], [(3, 1), (3, 3), (3, 6), (3, 7)]], [[(3, 6)], [(3, 1), (3, 3), (3, 5), (3, 7)]], [[(3, 7)], [(3, 1), (3, 3), (3, 5), (3, 6)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 2
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 3), (3, 5), (3, 6), (3, 7), (3, 8)]], [[(3, 3)], [(3, 1), (3, 5), (3, 6), (3, 7), (3, 8)]], [[(3, 5)], [(3, 1), (3, 3), (3, 6), (3, 7), (3, 8)]], [[(3, 6)], [(3, 1), (3, 3), (3, 5), (3, 7), (3, 8)]], [[(3, 7)], [(3, 1), (3, 3), (3, 5), (3, 6), (3, 8)]], [[(3, 8)], [(3, 1), (3, 3), (3, 5), (3, 6), (3, 7)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 5)], [(2, 1), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 6)], [(2, 1), (2, 5), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 7)], [(2, 1), (2, 5), (2, 6), (2, 8), (2, 9), (2, 10)]], [[(2, 8)], [(2, 1), (2, 5), (2, 6), (2, 7), (2, 9), (2, 10)]], [[(2, 9)], [(2, 1), (2, 5), (2, 6), (2, 7), (2, 8), (2, 10)]], [[(2, 10)], [(2, 1), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+depth: 3
+branches: Any[[[(3, 4)], [(3, 6), (3, 7), (3, 8), (3, 9), (3, 10)]], [[(3, 6)], [(3, 4), (3, 7), (3, 8), (3, 9), (3, 10)]], [[(3, 7)], [(3, 4), (3, 6), (3, 8), (3, 9), (3, 10)]], [[(3, 8)], [(3, 4), (3, 6), (3, 7), (3, 9), (3, 10)]], [[(3, 9)], [(3, 4), (3, 6), (3, 7), (3, 8), (3, 10)]], [[(3, 10)], [(3, 4), (3, 6), (3, 7), (3, 8), (3, 9)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 11
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 20
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 6
+
+depth: 3
+branches: Any[[[(3, 2)], [(3, 4), (3, 6), (3, 10)]], [[(3, 4)], [(3, 2), (3, 6), (3, 10)]], [[(3, 6)], [(3, 2), (3, 4), (3, 10)]], [[(3, 10)], [(3, 2), (3, 4), (3, 6)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 6
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 2
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 4
+
+depth: 3
+branches: Any[[[(3, 2)], [(3, 4), (3, 6), (3, 7), (3, 8)]], [[(3, 4)], [(3, 2), (3, 6), (3, 7), (3, 8)]], [[(3, 6)], [(3, 2), (3, 4), (3, 7), (3, 8)]], [[(3, 7)], [(3, 2), (3, 4), (3, 6), (3, 8)]], [[(3, 8)], [(3, 2), (3, 4), (3, 6), (3, 7)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 5
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 3
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 2)], [(2, 1), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 6)], [(2, 1), (2, 2), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 7)], [(2, 1), (2, 2), (2, 6), (2, 8), (2, 9), (2, 10)]], [[(2, 8)], [(2, 1), (2, 2), (2, 6), (2, 7), (2, 9), (2, 10)]], [[(2, 9)], [(2, 1), (2, 2), (2, 6), (2, 7), (2, 8), (2, 10)]], [[(2, 10)], [(2, 1), (2, 2), (2, 6), (2, 7), (2, 8), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+depth: 3
+branches: Any[[[(3, 3)], [(3, 5), (3, 7), (3, 8), (3, 9), (3, 10)]], [[(3, 5)], [(3, 3), (3, 7), (3, 8), (3, 9), (3, 10)]], [[(3, 7)], [(3, 3), (3, 5), (3, 8), (3, 9), (3, 10)]], [[(3, 8)], [(3, 3), (3, 5), (3, 7), (3, 9), (3, 10)]], [[(3, 9)], [(3, 3), (3, 5), (3, 7), (3, 8), (3, 10)]], [[(3, 10)], [(3, 3), (3, 5), (3, 7), (3, 8), (3, 9)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 14
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 19
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 16
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 21
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 10
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 8
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 3), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 2)], [(2, 1), (2, 3), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 3)], [(2, 1), (2, 2), (2, 7), (2, 8), (2, 9), (2, 10)]], [[(2, 7)], [(2, 1), (2, 2), (2, 3), (2, 8), (2, 9), (2, 10)]], [[(2, 8)], [(2, 1), (2, 2), (2, 3), (2, 7), (2, 9), (2, 10)]], [[(2, 9)], [(2, 1), (2, 2), (2, 3), (2, 7), (2, 8), (2, 10)]], [[(2, 10)], [(2, 1), (2, 2), (2, 3), (2, 7), (2, 8), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 22.0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 9
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 11
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 21
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 18
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 17
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 9
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 7
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 3), (2, 4), (2, 8), (2, 9), (2, 10)]], [[(2, 2)], [(2, 1), (2, 3), (2, 4), (2, 8), (2, 9), (2, 10)]], [[(2, 3)], [(2, 1), (2, 2), (2, 4), (2, 8), (2, 9), (2, 10)]], [[(2, 4)], [(2, 1), (2, 2), (2, 3), (2, 8), (2, 9), (2, 10)]], [[(2, 8)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 9), (2, 10)]], [[(2, 9)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 8), (2, 10)]], [[(2, 10)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 8), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 22.0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 7
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 9
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 17
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 18
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 21
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 11
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 9
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 3), (2, 4), (2, 5), (2, 9), (2, 10)]], [[(2, 2)], [(2, 1), (2, 3), (2, 4), (2, 5), (2, 9), (2, 10)]], [[(2, 3)], [(2, 1), (2, 2), (2, 4), (2, 5), (2, 9), (2, 10)]], [[(2, 4)], [(2, 1), (2, 2), (2, 3), (2, 5), (2, 9), (2, 10)]], [[(2, 5)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 9), (2, 10)]], [[(2, 9)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 10)]], [[(2, 10)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 9)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 8
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 10
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 21
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 16
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 19
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 14
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 2), (3, 3), (3, 4), (3, 6), (3, 8)]], [[(3, 2)], [(3, 1), (3, 3), (3, 4), (3, 6), (3, 8)]], [[(3, 3)], [(3, 1), (3, 2), (3, 4), (3, 6), (3, 8)]], [[(3, 4)], [(3, 1), (3, 2), (3, 3), (3, 6), (3, 8)]], [[(3, 6)], [(3, 1), (3, 2), (3, 3), (3, 4), (3, 8)]], [[(3, 8)], [(3, 1), (3, 2), (3, 3), (3, 4), (3, 6)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 10)]], [[(2, 2)], [(2, 1), (2, 3), (2, 4), (2, 5), (2, 6), (2, 10)]], [[(2, 3)], [(2, 1), (2, 2), (2, 4), (2, 5), (2, 6), (2, 10)]], [[(2, 4)], [(2, 1), (2, 2), (2, 3), (2, 5), (2, 6), (2, 10)]], [[(2, 5)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 6), (2, 10)]], [[(2, 6)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 10)]], [[(2, 10)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+depth: 3
+branches: Any[[[(3, 3)], [(3, 4), (3, 5), (3, 7), (3, 9)]], [[(3, 4)], [(3, 3), (3, 5), (3, 7), (3, 9)]], [[(3, 5)], [(3, 3), (3, 4), (3, 7), (3, 9)]], [[(3, 7)], [(3, 3), (3, 4), (3, 5), (3, 9)]], [[(3, 9)], [(3, 3), (3, 4), (3, 5), (3, 7)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 5
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 1
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 4
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 5), (3, 7), (3, 9)]], [[(3, 5)], [(3, 1), (3, 7), (3, 9)]], [[(3, 7)], [(3, 1), (3, 5), (3, 9)]], [[(3, 9)], [(3, 1), (3, 5), (3, 7)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 6
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 6
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 20
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 11
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 2), (3, 3), (3, 4), (3, 5), (3, 7)]], [[(3, 2)], [(3, 1), (3, 3), (3, 4), (3, 5), (3, 7)]], [[(3, 3)], [(3, 1), (3, 2), (3, 4), (3, 5), (3, 7)]], [[(3, 4)], [(3, 1), (3, 2), (3, 3), (3, 5), (3, 7)]], [[(3, 5)], [(3, 1), (3, 2), (3, 3), (3, 4), (3, 7)]], [[(3, 7)], [(3, 1), (3, 2), (3, 3), (3, 4), (3, 5)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7)]], [[(2, 2)], [(2, 1), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7)]], [[(2, 3)], [(2, 1), (2, 2), (2, 4), (2, 5), (2, 6), (2, 7)]], [[(2, 4)], [(2, 1), (2, 2), (2, 3), (2, 5), (2, 6), (2, 7)]], [[(2, 5)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 6), (2, 7)]], [[(2, 6)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 7)]], [[(2, 7)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 24.0
+
+depth: 3
+branches: Any[[[(3, 3)], [(3, 4), (3, 5), (3, 6), (3, 8), (3, 10)]], [[(3, 4)], [(3, 3), (3, 5), (3, 6), (3, 8), (3, 10)]], [[(3, 5)], [(3, 3), (3, 4), (3, 6), (3, 8), (3, 10)]], [[(3, 6)], [(3, 3), (3, 4), (3, 5), (3, 8), (3, 10)]], [[(3, 8)], [(3, 3), (3, 4), (3, 5), (3, 6), (3, 10)]], [[(3, 10)], [(3, 3), (3, 4), (3, 5), (3, 6), (3, 8)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+depth: 3
+branches: Any[[[(3, 4)], [(3, 5), (3, 6), (3, 8), (3, 10)]], [[(3, 5)], [(3, 4), (3, 6), (3, 8), (3, 10)]], [[(3, 6)], [(3, 4), (3, 5), (3, 8), (3, 10)]], [[(3, 8)], [(3, 4), (3, 5), (3, 6), (3, 10)]], [[(3, 10)], [(3, 4), (3, 5), (3, 6), (3, 8)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 1
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 5), (3, 6), (3, 8), (3, 10)]], [[(3, 5)], [(3, 1), (3, 6), (3, 8), (3, 10)]], [[(3, 6)], [(3, 1), (3, 5), (3, 8), (3, 10)]], [[(3, 8)], [(3, 1), (3, 5), (3, 6), (3, 10)]], [[(3, 10)], [(3, 1), (3, 5), (3, 6), (3, 8)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 6
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 8
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 12
+
+depth: 3
+branches: Any[[[(5, 1)], [(5, 2), (5, 3), (5, 6), (5, 8)]], [[(5, 2)], [(5, 1), (5, 3), (5, 6), (5, 8)]], [[(5, 3)], [(5, 1), (5, 2), (5, 6), (5, 8)]], [[(5, 6)], [(5, 1), (5, 2), (5, 3), (5, 8)]], [[(5, 8)], [(5, 1), (5, 2), (5, 3), (5, 6)]]]
+chosen_i: 5, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 14.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+depth: 2
+branches: Any[[[(2, 1)], [(2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8)]], [[(2, 2)], [(2, 1), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8)]], [[(2, 3)], [(2, 1), (2, 2), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8)]], [[(2, 4)], [(2, 1), (2, 2), (2, 3), (2, 5), (2, 6), (2, 7), (2, 8)]], [[(2, 5)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 6), (2, 7), (2, 8)]], [[(2, 6)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 7), (2, 8)]], [[(2, 7)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 8)]], [[(2, 8)], [(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7)]]]
+chosen_i: 2, chosen_j: 0
+sc before branch: 25.0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 2
+
+depth: 3
+branches: Any[[[(3, 4)], [(3, 5), (3, 6), (3, 7), (3, 9)]], [[(3, 5)], [(3, 4), (3, 6), (3, 7), (3, 9)]], [[(3, 6)], [(3, 4), (3, 5), (3, 7), (3, 9)]], [[(3, 7)], [(3, 4), (3, 5), (3, 6), (3, 9)]], [[(3, 9)], [(3, 4), (3, 5), (3, 6), (3, 7)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 2
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 0
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 5), (3, 6), (3, 7), (3, 9)]], [[(3, 5)], [(3, 1), (3, 6), (3, 7), (3, 9)]], [[(3, 6)], [(3, 1), (3, 5), (3, 7), (3, 9)]], [[(3, 7)], [(3, 1), (3, 5), (3, 6), (3, 9)]], [[(3, 9)], [(3, 1), (3, 5), (3, 6), (3, 7)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 18.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 5
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 3
+
+end:
+	depth: 3
+	sc: 19.0
+	counting_branch: 10
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 13
+
+end:
+	depth: 3
+	sc: 19.0
+	counting_branch: 6
+
+depth: 3
+branches: Any[[[(3, 1)], [(3, 2), (3, 3), (3, 4), (3, 5), (3, 9)]], [[(3, 2)], [(3, 1), (3, 3), (3, 4), (3, 5), (3, 9)]], [[(3, 3)], [(3, 1), (3, 2), (3, 4), (3, 5), (3, 9)]], [[(3, 4)], [(3, 1), (3, 2), (3, 3), (3, 5), (3, 9)]], [[(3, 5)], [(3, 1), (3, 2), (3, 3), (3, 4), (3, 9)]], [[(3, 9)], [(3, 1), (3, 2), (3, 3), (3, 4), (3, 5)]]]
+chosen_i: 3, chosen_j: 0
+sc before branch: 21.0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 3
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 0
+
+end:
+	depth: 4
+	sc: 16.0
+	counting_branch: 6
+
+end:
+	depth: 4
+	sc: 15.0
+	counting_branch: 1
+
+end:
+	depth: 4
+	sc: 17.0
+	counting_branch: 0
+
+end:
+	depth: 3
+	sc: 20.0
+	counting_branch: 4
+
+terminate: 
+ccs: 
+Time complexity: 2^28.381795848199378
+Space complexity: 2^20.0
+Read-write complexity: 2^25.019755419352474
+_______________________________________
+Time complexity: 2^20.971454443629966
+Space complexity: 2^17.0
+Read-write complexity: 2^19.775296804644935
+_______________________________________
+Time complexity: 2^19.39978067367464
+Space complexity: 2^15.0
+Read-write complexity: 2^18.0201932456393
+_______________________________________
+Time complexity: 2^21.003543303326662
+Space complexity: 2^16.0
+Read-write complexity: 2^19.886415528048484
+_______________________________________
+Time complexity: 2^20.290486897885216
+Space complexity: 2^16.0
+Read-write complexity: 2^19.26814675108439
+_______________________________________
+Time complexity: 2^21.153460494775423
+Space complexity: 2^16.0
+Read-write complexity: 2^20.323898083210704
+_______________________________________
+Time complexity: 2^21.076272814532338
+Space complexity: 2^16.0
+Read-write complexity: 2^20.03056072537413
+_______________________________________
+Time complexity: 2^27.177423910322197
+Space complexity: 2^19.0
+Read-write complexity: 2^23.351297156022532
+_______________________________________
+Time complexity: 2^26.678278707489287
+Space complexity: 2^18.0
+Read-write complexity: 2^22.22965174486075
+_______________________________________
+Time complexity: 2^28.123214886923524
+Space complexity: 2^19.0
+Read-write complexity: 2^23.663935573503675
+_______________________________________
+Time complexity: 2^20.473458034634547
+Space complexity: 2^15.0
+Read-write complexity: 2^19.10329549320179
+_______________________________________
+Time complexity: 2^21.155907727134768
+Space complexity: 2^17.0
+Read-write complexity: 2^19.88472949091718
+_______________________________________
+Time complexity: 2^20.926854082057368
+Space complexity: 2^16.0
+Read-write complexity: 2^19.987043293496612
+_______________________________________
+Time complexity: 2^19.90691994701569
+Space complexity: 2^15.0
+Read-write complexity: 2^18.759676916722803
+_______________________________________
+Time complexity: 2^22.606492869779423
+Space complexity: 2^18.0
+Read-write complexity: 2^20.955200783132145
+_______________________________________
+Time complexity: 2^29.654798587783677
+Space complexity: 2^20.0
+Read-write complexity: 2^24.42278911361623
+_______________________________________
+Time complexity: 2^30.01982615770419
+Space complexity: 2^20.0
+Read-write complexity: 2^23.67243516181022
+_______________________________________
+Time complexity: 2^20.874863560920982
+Space complexity: 2^17.0
+Read-write complexity: 2^20.08849194203964
+_______________________________________
+Time complexity: 2^19.141905061866783
+Space complexity: 2^14.0
+Read-write complexity: 2^17.66886421435936
+_______________________________________
+Time complexity: 2^19.418241758679365
+Space complexity: 2^15.0
+Read-write complexity: 2^18.325828063285055
+_______________________________________
+Time complexity: 2^20.695820444181358
+Space complexity: 2^16.0
+Read-write complexity: 2^19.520770206524013
+_______________________________________
+Time complexity: 2^20.68370313551589
+Space complexity: 2^16.0
+Read-write complexity: 2^19.781854338383127
+_______________________________________
+Time complexity: 2^28.205111784373877
+Space complexity: 2^20.0
+Read-write complexity: 2^24.581605567120928
+_______________________________________
+Time complexity: 2^25.83567462678178
+Space complexity: 2^20.0
+Read-write complexity: 2^24.818959653438792
+_______________________________________
+Time complexity: 2^27.765506548520136
+Space complexity: 2^20.0
+Read-write complexity: 2^24.908042419448368
+_______________________________________
+Time complexity: 2^21.57598787732933
+Space complexity: 2^17.0
+Read-write complexity: 2^20.901311067903766
+_______________________________________
+Time complexity: 2^20.96529179639646
+Space complexity: 2^16.0
+Read-write complexity: 2^19.941040440087406
+_______________________________________
+Time complexity: 2^20.12599859906986
+Space complexity: 2^15.0
+Read-write complexity: 2^18.981168670741308
+_______________________________________
+Time complexity: 2^21.29189014033856
+Space complexity: 2^17.0
+Read-write complexity: 2^19.843990037326698
+_______________________________________
+Time complexity: 2^21.73096303724469
+Space complexity: 2^17.0
+Read-write complexity: 2^20.866472253773832
+_______________________________________
+Time complexity: 2^21.934621685895245
+Space complexity: 2^18.0
+Read-write complexity: 2^20.805987060871516
+_______________________________________
+Time complexity: 2^21.41302871993499
+Space complexity: 2^17.0
+Read-write complexity: 2^20.437232917181838
+_______________________________________
+Time complexity: 2^20.88703761286876
+Space complexity: 2^16.0
+Read-write complexity: 2^20.201569971938973
+_______________________________________
+Time complexity: 2^20.98995295484893
+Space complexity: 2^16.0
+Read-write complexity: 2^19.719487422591115
+_______________________________________
+Time complexity: 2^22.070993532008504
+Space complexity: 2^18.0
+Read-write complexity: 2^21.14477958577018
+_______________________________________
+Time complexity: 2^22.504269583941436
+Space complexity: 2^18.0
+Read-write complexity: 2^21.518982049362275
+_______________________________________
+Time complexity: 2^21.54303134810976
+Space complexity: 2^17.0
+Read-write complexity: 2^20.7690541117171
+_______________________________________
+Time complexity: 2^19.99116058457157
+Space complexity: 2^15.0
+Read-write complexity: 2^19.162251171395905
+_______________________________________
+Time complexity: 2^21.368197902565395
+Space complexity: 2^17.0
+Read-write complexity: 2^20.83819060630111
+_______________________________________
+Time complexity: 2^20.897051449280777
+Space complexity: 2^16.0
+Read-write complexity: 2^19.685681296547493
+_______________________________________
+Time complexity: 2^21.76044423501398
+Space complexity: 2^17.0
+Read-write complexity: 2^20.884111628134956
+_______________________________________
+Time complexity: 2^21.24395435338578
+Space complexity: 2^17.0
+Read-write complexity: 2^20.391857156551573
+_______________________________________
+Time complexity: 2^20.50367242176661
+Space complexity: 2^16.0
+Read-write complexity: 2^19.32339126898868
+_______________________________________
+Time complexity: 2^21.685759562576894
+Space complexity: 2^17.0
+Read-write complexity: 2^20.886785388317442
+_______________________________________
+Time complexity: 2^21.438212145669606
+Space complexity: 2^17.0
+Read-write complexity: 2^20.600006340982834
+_______________________________________
+Time complexity: 2^21.79485488519778
+Space complexity: 2^17.0
+Read-write complexity: 2^20.705015553328042
+_______________________________________
+Time complexity: 2^22.455769435064266
+Space complexity: 2^17.0
+Read-write complexity: 2^21.5195062037297
+_______________________________________
+Time complexity: 2^27.307797142886066
+Space complexity: 2^20.0
+Read-write complexity: 2^24.381603479556887
+_______________________________________
+Time complexity: 2^27.057464638086596
+Space complexity: 2^20.0
+Read-write complexity: 2^24.70694107303072
+_______________________________________
+Time complexity: 2^26.271045524975566
+Space complexity: 2^20.0
+Read-write complexity: 2^24.665838622142207
+_______________________________________
+Time complexity: 2^22.602710643403572
+Space complexity: 2^17.0
+Read-write complexity: 2^21.058487918042843
+_______________________________________
+Time complexity: 2^21.16696907141798
+Space complexity: 2^16.0
+Read-write complexity: 2^19.705100795074724
+_______________________________________
+Time complexity: 2^20.3522579220859
+Space complexity: 2^16.0
+Read-write complexity: 2^19.488077444241817
+_______________________________________
+Time complexity: 2^23.512262800747198
+Space complexity: 2^18.0
+Read-write complexity: 2^22.259803881111374
+_______________________________________
+Time complexity: 2^28.44664325411792
+Space complexity: 2^20.0
+Read-write complexity: 2^25.389159151351038
+_______________________________________
+Time complexity: 2^22.446129948073764
+Space complexity: 2^18.0
+Read-write complexity: 2^21.622374056256188
+_______________________________________
+Time complexity: 2^20.755079906070677
+Space complexity: 2^16.0
+Read-write complexity: 2^19.337275628263146
+_______________________________________
+Time complexity: 2^20.64651300646272
+Space complexity: 2^16.0
+Read-write complexity: 2^19.65548704977682
+_______________________________________
+Time complexity: 2^23.198908549076336
+Space complexity: 2^18.0
+Read-write complexity: 2^21.794668506884214
+_______________________________________
+Time complexity: 2^21.066149644943255
+Space complexity: 2^16.0
+Read-write complexity: 2^20.242044808772576
+_______________________________________
+Time complexity: 2^21.635604767744784
+Space complexity: 2^17.0
+Read-write complexity: 2^20.63214411635789
+_______________________________________
+Time complexity: 2^20.33404736634245
+Space complexity: 2^16.0
+Read-write complexity: 2^19.422263967495486
+_______________________________________
+Time complexity: 2^20.633663108035158
+Space complexity: 2^16.0
+Read-write complexity: 2^19.614930863499076
+_______________________________________
+Time complexity: 2^22.630046887091137
+Space complexity: 2^17.0
+Read-write complexity: 2^21.526672592829886
+_______________________________________
+Time complexity: 2^21.167481850388313
+Space complexity: 2^17.0
+Read-write complexity: 2^20.1242210410597
+_______________________________________
+Time complexity: 2^22.87453434477064
+Space complexity: 2^17.0
+Read-write complexity: 2^21.28164539342395
+_______________________________________
+Time complexity: 2^28.312434207642415
+Space complexity: 2^20.0
+Read-write complexity: 2^24.22543980429069
+_______________________________________
+Time complexity: 2^25.246689830019946
+Space complexity: 2^20.0
+Read-write complexity: 2^23.844387313536973
+_______________________________________
+Time complexity: 2^30.084351935093295
+Space complexity: 2^20.0
+Read-write complexity: 2^24.637392520046184
+_______________________________________
+Time complexity: 2^26.940276862234338
+Space complexity: 2^20.0
+Read-write complexity: 2^25.07158196034444
+_______________________________________
+Time complexity: 2^28.535004677420464
+Space complexity: 2^20.0
+Read-write complexity: 2^25.147422445060865
+_______________________________________
+Time complexity: 2^28.282681151067855
+Space complexity: 2^20.0
+Read-write complexity: 2^24.572020891611327
+_______________________________________
+Time complexity: 2^28.150197648540946
+Space complexity: 2^20.0
+Read-write complexity: 2^24.052655688687405
+_______________________________________
+Time complexity: 2^28.177543521756643
+Space complexity: 2^20.0
+Read-write complexity: 2^24.420162690403423
+_______________________________________
+Time complexity: 2^28.13304612189632
+Space complexity: 2^20.0
+Read-write complexity: 2^23.905866866912515
+_______________________________________
+Time complexity: 2^25.950410992605764
+Space complexity: 2^20.0
+Read-write complexity: 2^24.1823430501564
+_______________________________________
+Time complexity: 2^28.32243346337395
+Space complexity: 2^20.0
+Read-write complexity: 2^24.678767482468874
+_______________________________________
+Time complexity: 2^27.383744793304913
+Space complexity: 2^20.0
+Read-write complexity: 2^24.210831766088155
+_______________________________________
+Time complexity: 2^28.23515035339676
+Space complexity: 2^20.0
+Read-write complexity: 2^24.604450692405422
+_______________________________________
+Time complexity: 2^29.113784454535228
+Space complexity: 2^20.0
+Read-write complexity: 2^24.701834643078854
+_______________________________________
+Time complexity: 2^27.378765735006073
+Space complexity: 2^20.0
+Read-write complexity: 2^24.0720359979663
+_______________________________________
+Time complexity: 2^27.66716721176387
+Space complexity: 2^20.0
+Read-write complexity: 2^24.50668402890481
+_______________________________________
+Time complexity: 2^25.955519104722836
+Space complexity: 2^20.0
+Read-write complexity: 2^24.2432138692742
+_______________________________________
+Time complexity: 2^28.129957999029145
+Space complexity: 2^20.0
+Read-write complexity: 2^23.91406709494375
+_______________________________________
+Time complexity: 2^28.17739018123226
+Space complexity: 2^20.0
+Read-write complexity: 2^24.357823325779485
+_______________________________________
+Time complexity: 2^28.146609731291996
+Space complexity: 2^20.0
+Read-write complexity: 2^24.053908237265194
+_______________________________________
+Time complexity: 2^28.506733786332163
+Space complexity: 2^20.0
+Read-write complexity: 2^24.462263049884317
+_______________________________________
+Time complexity: 2^27.50527161567637
+Space complexity: 2^20.0
+Read-write complexity: 2^24.992089551473214
+_______________________________________
+Time complexity: 2^26.913396020885486
+Space complexity: 2^20.0
+Read-write complexity: 2^24.845204082753398
+_______________________________________
+Time complexity: 2^28.735264318302615
+Space complexity: 2^20.0
+Read-write complexity: 2^24.513285746980934
+_______________________________________
+Time complexity: 2^25.244005218210102
+Space complexity: 2^20.0
+Read-write complexity: 2^24.02656050455231
+_______________________________________
+Time complexity: 2^28.313768210398297
+Space complexity: 2^20.0
+Read-write complexity: 2^24.203563008741067
+_______________________________________
+Time complexity: 2^22.77177738301812
+Space complexity: 2^17.0
+Read-write complexity: 2^21.43572773403434
+_______________________________________
+Time complexity: 2^21.14343428661092
+Space complexity: 2^17.0
+Read-write complexity: 2^20.384947074199587
+_______________________________________
+Time complexity: 2^22.706255493191733
+Space complexity: 2^18.0
+Read-write complexity: 2^21.52437671434229
+_______________________________________
+Time complexity: 2^20.64115036182077
+Space complexity: 2^16.0
+Read-write complexity: 2^19.659377523750713
+_______________________________________
+Time complexity: 2^20.328328690859735
+Space complexity: 2^16.0
+Read-write complexity: 2^19.39340512231091
+_______________________________________
+Time complexity: 2^21.648103434202934
+Space complexity: 2^17.0
+Read-write complexity: 2^20.779369095689052
+_______________________________________
+Time complexity: 2^21.114774933959424
+Space complexity: 2^16.0
+Read-write complexity: 2^19.996736897321675
+_______________________________________
+Time complexity: 2^23.187552033570928
+Space complexity: 2^18.0
+Read-write complexity: 2^21.854811707363115
+_______________________________________
+Time complexity: 2^20.70343555955528
+Space complexity: 2^16.0
+Read-write complexity: 2^19.42517286772021
+_______________________________________
+Time complexity: 2^20.430665910027276
+Space complexity: 2^16.0
+Read-write complexity: 2^19.12172321068665
+_______________________________________
+Time complexity: 2^22.444826595244525
+Space complexity: 2^18.0
+Read-write complexity: 2^21.483863493493992
+_______________________________________
+Time complexity: 2^27.55792065251973
+Space complexity: 2^20.0
+Read-write complexity: 2^25.145459423018956
+_______________________________________
+Time complexity: 2^23.575947612441105
+Space complexity: 2^18.0
+Read-write complexity: 2^22.50608211332367
+_______________________________________
+Time complexity: 2^20.37166499277463
+Space complexity: 2^16.0
+Read-write complexity: 2^19.465137897609356
+_______________________________________
+Time complexity: 2^21.22584464752576
+Space complexity: 2^16.0
+Read-write complexity: 2^20.04678963014659
+_______________________________________
+Time complexity: 2^22.625890292072306
+Space complexity: 2^17.0
+Read-write complexity: 2^20.955038978951418
+_______________________________________
+Time complexity: 2^26.259765474812628
+Space complexity: 2^20.0
+Read-write complexity: 2^25.123378767212962
+_______________________________________
+Time complexity: 2^27.454677087214385
+Space complexity: 2^20.0
+Read-write complexity: 2^24.778956961061844
+_______________________________________
+Time complexity: 2^27.31414417240525
+Space complexity: 2^20.0
+Read-write complexity: 2^24.437853582906914
+_______________________________________
+Time complexity: 2^22.383997691815992
+Space complexity: 2^17.0
+Read-write complexity: 2^21.496649499429502
+_______________________________________
+Time complexity: 2^21.726319621873383
+Space complexity: 2^16.0
+Read-write complexity: 2^20.4932055758138
+_______________________________________
+Time complexity: 2^21.442357354808415
+Space complexity: 2^17.0
+Read-write complexity: 2^20.69759799040445
+_______________________________________
+Time complexity: 2^22.04923070221557
+Space complexity: 2^18.0
+Read-write complexity: 2^20.967143919233845
+_______________________________________
+Time complexity: 2^20.52980131505947
+Space complexity: 2^16.0
+Read-write complexity: 2^19.315713447142716
+_______________________________________
+Time complexity: 2^20.97223800484099
+Space complexity: 2^17.0
+Read-write complexity: 2^19.85249141041883
+_______________________________________
+Time complexity: 2^21.80899715839884
+Space complexity: 2^16.0
+Read-write complexity: 2^20.26844034249327
+_______________________________________
+Time complexity: 2^20.91948240112545
+Space complexity: 2^16.0
+Read-write complexity: 2^19.937208567060836
+_______________________________________
+Time complexity: 2^21.842031084311273
+Space complexity: 2^17.0
+Read-write complexity: 2^20.334448975602083
+_______________________________________
+Time complexity: 2^19.985833600400106
+Space complexity: 2^15.0
+Read-write complexity: 2^19.071894389888165
+_______________________________________
+Time complexity: 2^21.515842740331134
+Space complexity: 2^17.0
+Read-write complexity: 2^20.573655507637888
+_______________________________________
+Time complexity: 2^22.205658140723337
+Space complexity: 2^17.0
+Read-write complexity: 2^21.189302768117532
+_______________________________________
+Time complexity: 2^22.07950366428293
+Space complexity: 2^18.0
+Read-write complexity: 2^21.16194806527884
+_______________________________________
+Time complexity: 2^21.034502784938574
+Space complexity: 2^16.0
+Read-write complexity: 2^19.58970417289187
+_______________________________________
+Time complexity: 2^20.878730489492728
+Space complexity: 2^16.0
+Read-write complexity: 2^20.064644100180754
+_______________________________________
+Time complexity: 2^21.448148577217466
+Space complexity: 2^17.0
+Read-write complexity: 2^20.373664904755266
+_______________________________________
+Time complexity: 2^21.94719744254209
+Space complexity: 2^18.0
+Read-write complexity: 2^20.82060359052841
+_______________________________________
+Time complexity: 2^21.72968421651687
+Space complexity: 2^17.0
+Read-write complexity: 2^20.814703713832102
+_______________________________________
+Time complexity: 2^21.310673794938776
+Space complexity: 2^17.0
+Read-write complexity: 2^19.89752790575277
+_______________________________________
+Time complexity: 2^20.102347393524088
+Space complexity: 2^15.0
+Read-write complexity: 2^19.193344877580103
+_______________________________________
+Time complexity: 2^20.965234716069673
+Space complexity: 2^16.0
+Read-write complexity: 2^19.856171694782763
+_______________________________________
+Time complexity: 2^21.62912934882112
+Space complexity: 2^17.0
+Read-write complexity: 2^20.460316901267305
+_______________________________________
+Time complexity: 2^28.40218083310998
+Space complexity: 2^20.0
+Read-write complexity: 2^24.81387741268353
+_______________________________________
+Time complexity: 2^25.831141369742923
+Space complexity: 2^20.0
+Read-write complexity: 2^24.550633776890173
+_______________________________________
+Time complexity: 2^28.20526992647608
+Space complexity: 2^20.0
+Read-write complexity: 2^24.440885068123556
+_______________________________________
+Time complexity: 2^20.660295401119058
+Space complexity: 2^16.0
+Read-write complexity: 2^19.962013419622167
+_______________________________________
+Time complexity: 2^20.818118716648517
+Space complexity: 2^16.0
+Read-write complexity: 2^19.72966222946644
+_______________________________________
+Time complexity: 2^19.639568585026925
+Space complexity: 2^16.0
+Read-write complexity: 2^18.816280572994295
+_______________________________________
+Time complexity: 2^19.15199758998973
+Space complexity: 2^14.0
+Read-write complexity: 2^17.547790742613266
+_______________________________________
+Time complexity: 2^20.87542014987011
+Space complexity: 2^17.0
+Read-write complexity: 2^20.114076546008228
+_______________________________________
+Time complexity: 2^30.019437721297088
+Space complexity: 2^20.0
+Read-write complexity: 2^23.654105087398857
+_______________________________________
+Time complexity: 2^20.360056179347556
+Space complexity: 2^16.0
+Read-write complexity: 2^19.478574120167664
+_______________________________________
+Time complexity: 2^19.922810851270157
+Space complexity: 2^15.0
+Read-write complexity: 2^18.7898042522665
+_______________________________________
+Time complexity: 2^20.011504363518622
+Space complexity: 2^15.0
+Read-write complexity: 2^18.895146267686545
+_______________________________________
+Time complexity: 2^21.432884905015992
+Space complexity: 2^17.0
+Read-write complexity: 2^20.190954358092302
+_______________________________________
+Time complexity: 2^21.066263318800264
+Space complexity: 2^16.0
+Read-write complexity: 2^20.185077462145614
+_______________________________________
+Time complexity: 2^22.44010928625711
+Space complexity: 2^18.0
+Read-write complexity: 2^21.335592621929077
+_______________________________________
+Time complexity: 2^19.827258959787855
+Space complexity: 2^16.0
+Read-write complexity: 2^18.888110004796488
+_______________________________________
+Time complexity: 2^20.84753836616352
+Space complexity: 2^16.0
+Read-write complexity: 2^20.250128370417375
+_______________________________________
+Time complexity: 2^21.190279840551444
+Space complexity: 2^17.0
+Read-write complexity: 2^20.27172403499627
+_______________________________________
+Time complexity: 2^20.51841015830859
+Space complexity: 2^15.0
+Read-write complexity: 2^19.388650091981198
+_______________________________________
+Time complexity: 2^28.121905505213302
+Space complexity: 2^19.0
+Read-write complexity: 2^23.663814863553224
+_______________________________________
+Time complexity: 2^25.61146545599883
+Space complexity: 2^20.0
+Read-write complexity: 2^24.729483468532656
+_______________________________________
+Time complexity: 2^27.177892376546858
+Space complexity: 2^19.0
+Read-write complexity: 2^23.130484311771628
+_______________________________________
+Time complexity: 2^21.053631616549556
+Space complexity: 2^16.0
+Read-write complexity: 2^20.132972835536453
+_______________________________________
+Time complexity: 2^21.152021117114266
+Space complexity: 2^16.0
+Read-write complexity: 2^20.321032957116238
+_______________________________________
+Time complexity: 2^20.311601987830283
+Space complexity: 2^16.0
+Read-write complexity: 2^19.398065181876248
+_______________________________________
+Time complexity: 2^21.013934626795688
+Space complexity: 2^16.0
+Read-write complexity: 2^19.462368467546714
+_______________________________________
+Time complexity: 2^19.360999213973198
+Space complexity: 2^15.0
+Read-write complexity: 2^17.960245212441055
+_______________________________________
+Time complexity: 2^21.028553612974754
+Space complexity: 2^17.0
+Read-write complexity: 2^19.926925727431723
+_______________________________________
+Time complexity: 2^29.16865249255192
+Space complexity: 2^20.0
+Read-write complexity: 2^24.543831707869234
+_______________________________________
+countings: Any[4, 0, 1, 6, 0, 3, 1, 6, 13, 10, 3, 3, 1, 5, 1, 5, 2, 0, 2, 0, 2, 1, 12, 8, 6, 0, 1, 1, 1, 2, 1, 2, 1, 3, 2, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 11, 20, 6, 1, 1, 6, 2, 4, 1, 2, 2, 5, 3, 0, 1, 2, 2, 0, 0, 14, 19, 16, 21, 10, 8, 9, 11, 21, 18, 17, 9, 7, 7, 9, 17, 18, 21, 11, 9, 8, 10, 21, 16, 19, 14, 0, 0, 2, 2, 1, 0, 3, 5, 2, 2, 1, 4, 2, 6, 1, 1, 6, 20, 11, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 2, 3, 1, 2, 1, 2, 1, 1, 1, 0, 6, 8, 12, 1, 2, 0, 2, 0, 2, 2, 2, 1, 0, 0, 1, 5, 1, 3, 3, 10, 13, 6, 1, 3, 0, 6, 1, 0, 4]
+total tc: 33.86513310390993
+countings sum: 724
+slice number: 162
