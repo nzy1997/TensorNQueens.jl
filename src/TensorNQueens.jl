@@ -10,11 +10,12 @@ using Graphs
 using SCIP
 using Graphs
 
-export ScNeighborSelector
 
-include("utils.jl")
 include("tensors.jl")
 include("tensor8.jl")
 include("tensor3.jl")
+include("branching_region.jl")
+include("scorer.jl")
+include("truth_table.jl")
 include("tensorbranching.jl")
 end

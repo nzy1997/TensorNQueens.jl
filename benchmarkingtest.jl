@@ -1,33 +1,11 @@
 using Test
 using TensorNQueens
-using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network,generate_masked_3_tensor_network, truth_table, list_subtree, generate_pos_vec_local, generate_neighbors, branching_region, position_branching, ScNeighborSelector, ScRectangleSelector, tensor_branching
+using TensorNQueens: generate_tensor, TensorNQ, generate_tensor_network, generate_TensorNQ_lattice,generate_8_tensor_network,generate_3_tensor_network,generate_masked_3_tensor_network, truth_table, list_subtree, generate_pos_vec_local, generate_neighbors, branching_region, position_branching, ScNeighborSelector, ScRectangleSelector, ScRectangleD4Selector, tensor_branching, naive_tensor_branching, random_naive_tensor_branching, sc_score_weights, ExactScScorer, TruncateBondScorer
 using OMEinsum
 using OptimalBranching
 using SCIP
 using Graphs
 
-@testset "tensor_branching" begin
-    n = 12
-    t9_lattice = generate_TensorNQ_lattice(n)
-    # code, tensors = generate_masked_3_tensor_network(n,t9_lattice,[],[],Int)
-    # optcode = optimize_code(code, uniformsize(code, 2), TreeSA())
-    # cc = contraction_complexity(optcode, uniformsize(optcode, 2))
-    # println(cc)
-    pos1 = []
-    pos0 = []
-    coefficient = 1.0
-    solver = OptimalBranchingMIS.OptimalBranchingCore.IPSolver(optimizer=SCIP.Optimizer)
-    k_ud = 0
-    k_lr = 2
-    n_max = 20
-    sc_target = 25
-    region_selector = ScRectangleSelector(k_ud, k_lr, n_max, sc_target) 
-    ccs, counting_branches = tensor_branching(n, t9_lattice, pos1, pos0, coefficient, sc_target, region_selector, solver)
-    println(ccs)
-    println(counting_branches)
-    println(sum(counting_branches))
-end
-    
 # @testset "generate_masked_3_tensor_network" begin
 #     solver = TreeSA(niters = 200, βs=0.01:0.01:10, ntrials=2,sc_weight = 5.0)
 #     for n in 28:28
@@ -48,3 +26,25 @@ end
 #         println()
 #     end
 # end
+
+
+@testset "tensor_branching" begin
+    n = 20
+    t9_lattice = generate_TensorNQ_lattice(n)
+    
+    pos1 = []
+    pos0 = []
+    coefficient = 1.0
+    solver = OptimalBranchingMIS.OptimalBranchingCore.IPSolver(optimizer=SCIP.Optimizer)
+    k_ud = 0
+    k_lr = 5
+    n_max = 20
+    sc_target = 40
+    region_selector = ScRectangleSelector(k_ud, k_lr, n_max, sc_target) 
+    bond_limit = 4
+    scorer = TruncateBondScorer(bond_limit, true, false)
+    output_file = "data/n=$(n)_sc_target=$(sc_target)_SCregion_D4scorer_rec=$(k_lr)_$(k_ud).log"
+    set_logging(true, output_file)
+    ccs, counting_branches = tensor_branching(n, t9_lattice, pos1, pos0, coefficient, sc_target, region_selector, solver, scorer, 1)
+end
+    
